@@ -3,8 +3,10 @@ body{
     padding: 0;
     font-family:Verdana, Geneva, Tahoma, sans-serif;
     background:#1B203A;
-    height: 100vh;
+    /*height: 150vh;*/
     overflow: hidden;
+    height: auto;
+    
 }
 .name{
     text-align: center;
@@ -14,7 +16,7 @@ body{
     padding-top: 10px;
     margin-top: 20px;
 }
-.center{
+/* .container{
     position:absolute;
     top: 50%;
     left: 50%;
@@ -22,6 +24,17 @@ body{
     width: 500px;
     background: #252C48;
     border-radius: 10px;
+}*/
+
+.container{
+    margin-top: 90px;
+    max-width: 500px;
+    height: 700px;
+    border: 1px ;
+    background-color: #252C48;
+    border-radius: 15px;
+    padding: 20px;
+
 }
 .login{
     color: #FFFFFF;
@@ -109,5 +122,3 @@ input[type="submit"]:hover{
 .signup_link a:hover{
     text-decoration: underline;
 }
-
-

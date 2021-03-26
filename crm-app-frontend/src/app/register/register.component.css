@@ -5,7 +5,7 @@ body{
     background:#1B203A;
     /*height: 150vh;*/
     overflow: hidden;
-    height: auto;
+    height: 150vh;
     
 }
 .name{
@@ -29,7 +29,7 @@ body{
 .container{
     margin-top: 90px;
     max-width: 500px;
-    height: 700px;
+    height: 750px;
     border: 1px ;
     background-color: #252C48;
     border-radius: 15px;

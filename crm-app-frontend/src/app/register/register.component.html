@@ -26,11 +26,11 @@
                                 </div>
                             </div>
                             <div class="txt_field">
-                                <input type="email" style="color: whitesmoke;" formControlName="emailid" [ngClass]="{ 'is-invalid': submitted && f.emailid.errors }" placeholder="Email Id" required>
+                                <input type="email" style="color: whitesmoke;" formControlName="emailId" [ngClass]="{ 'is-invalid': submitted && f.emailId.errors }" placeholder="Email Id" required>
                                 <span></span>
                                 <label for=""></label>
-                                <div *ngIf="submitted && f.emailid.errors" class="invalid-feedback">
-                                    <div *ngIf="f.emailid.errors.required">Email Id is required</div>
+                                <div *ngIf="submitted && f.emailId.errors" class="invalid-feedback">
+                                    <div *ngIf="f.emailId.errors.required">Email Id is required</div>
                                     <!-- <div *ngIf="f.username.errors.userExist">username is same</div> -->
                                 </div>
                             </div>

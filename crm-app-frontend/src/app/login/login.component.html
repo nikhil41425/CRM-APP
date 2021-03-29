@@ -7,12 +7,22 @@
                     <div id="login-box" class="col-md-12">
                         <form id="login-form" class="form" action="" method="post" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
                             <div style="font-size: 30px;text-align: center;"class="login">Login</div>
-                            <div class="txt_field">
+                            <!--<div class="txt_field">
                                 <input type="text" style="color: whitesmoke;" formControlName="username" [ngClass]="{ 'is-invalid': submitted && f.username.errors }" placeholder="Username" required>
                                 <span></span>
                                 <label for=""></label>
                                 <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
                                     <div *ngIf="f.username.errors.required">Username is required</div>
+                                    <!-- <div *ngIf="f.username.errors.userExist">username is same</div> -->
+                               <!-- </div>
+                            </div>-->
+
+                            <div class="txt_field">
+                                <input type="email" style="color: whitesmoke;" formControlName="emailId" [ngClass]="{ 'is-invalid': submitted && f.emailId.errors }" placeholder="Email Id" required>
+                                <span></span>
+                                <label for=""></label>
+                                <div *ngIf="submitted && f.emailId.errors" class="invalid-feedback">
+                                    <div *ngIf="f.emailId.errors.required">Email Id is required</div>
                                     <!-- <div *ngIf="f.username.errors.userExist">username is same</div> -->
                                 </div>
                             </div>

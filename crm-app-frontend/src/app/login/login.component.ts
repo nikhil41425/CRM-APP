@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { UserService } from '../user.service';
+import { first } from 'rxjs/operators';
 
 @Component({
   selector: 'app-login',
@@ -10,14 +11,18 @@ import { UserService } from '../user.service';
 })
 export class LoginComponent implements OnInit {
 
+  apiResponse:any;
+  
+
   constructor(private formBuilder: FormBuilder,private userService:UserService,private router:Router) { }
 
   submitted = false;
   loginForm:any;
 
+
   ngOnInit(): void {
         this.loginForm = this.formBuilder.group({
-      username: ['', Validators.required],
+      emailId: ['', [Validators.required,Validators.email]],
       password: ['', [Validators.required, Validators.minLength(6)]]
     });
   }
@@ -28,8 +33,35 @@ export class LoginComponent implements OnInit {
 
     // stop here if form is invalid
     if (this.loginForm.invalid) {
+      alert("incorrect details")
         return;
     }
-    alert("success");
-  }
+    else{
+
+      this.userService.loginUser(this.loginForm.value)
+      .pipe(first())
+      .subscribe(
+        response => {
+          console.log(response);
+            
+           this.apiResponse=response;
+           
+           if(this.apiResponse.token){
+             localStorage.setItem('token',this.apiResponse.token);
+             this.router.navigateByUrl('/dashboard');
+
+           }
+           else{
+             alert("incorrect password");
+           }
+          
+     
+        },
+        error => {
+          console.log(error);
+          });
+      
+    }
+      
+  } 
 }
